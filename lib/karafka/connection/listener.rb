@@ -35,7 +35,7 @@ module Karafka
       rescue Exception => e
         # rubocop:enable RescueException
         Karafka.monitor.notice_error(self.class, e)
-        @topic_consumer&.stop
+        @topic_consumer && @topic_consumer.stop
         retry if @topic_consumer
       end
 

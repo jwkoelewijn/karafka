@@ -60,7 +60,7 @@ module Karafka
     # We won't run perform at the backend if any of the callbacks
     # returns false
     # @see http://api.rubyonrails.org/classes/ActiveSupport/Callbacks/ClassMethods.html#method-i-get_callbacks
-    define_callbacks :schedule
+    define_callbacks :schedule, terminator: ->(_, result) { result == false }
 
     # This will be set based on routing settings
     # From 0.4 a single controller can handle multiple topics jobs
