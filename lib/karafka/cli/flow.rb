@@ -8,7 +8,7 @@ module Karafka
       # Print out all defined routes in alphabetical order
       def call
         routes.each do |route|
-          any_topics = !route.responder&.topics.nil?
+          any_topics = route.responder && !route.responder.topics.nil?
 
           if any_topics
             puts "#{route.topic} =>"

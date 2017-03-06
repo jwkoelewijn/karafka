@@ -28,7 +28,7 @@ module Karafka
 
       # Gracefuly stops topic consumption
       def stop
-        @kafka_consumer&.stop
+        @kafka_consumer && @topic_consumer.stop
         @kafka_consumer = nil
       end
 

@@ -83,7 +83,7 @@ module Karafka
       super_execution = caller_locations(1, 2)[0].label == caller_locations(1, 2)[1].label
 
       scope = super_execution ? 1 : nil
-      scope ||= index.positive? ? 0 : 1
+      scope ||= index > 0 ? 0 : 1
 
       caller_locations(index + 1, 2)[scope].label
     end
