@@ -17,7 +17,6 @@
   fileutils
   dry-configurable
   active_support/callbacks
-  active_support/core_ext/class/subclasses
   active_support/core_ext/hash/indifferent_access
   active_support/descendants_tracker
   active_support/inflector
@@ -25,6 +24,8 @@
   karafka/status
   karafka/routing/route
 ).each { |lib| require lib }
+# active_support/core_ext/class/subclasses has been removed from the upper statement
+# since that's available in both 
 
 # Karafka library
 module Karafka
